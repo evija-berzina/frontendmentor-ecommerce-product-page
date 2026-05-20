@@ -12,7 +12,14 @@ import ImageAvatar from "../public/image-avatar.png";
 //     openNavbar: React.Dispatch<React.SetStateAction<boolean>>;
 //   };
 
-export function Header() {
+type AddToCartProps = {
+    quantity: number;
+    setQuantity: React.Dispatch<React.SetStateAction<number>>;
+    addToCart: () => void;
+    cartQuantity: number;
+  };
+
+export function Header({cartQuantity}: AddToCartProps) {
   const [navbarOpen, setNavbarOpen] = useState(false);
 
   function openNavbar() {
@@ -43,6 +50,7 @@ export function Header() {
           </>
         )
       }
+
       <div className="flex flex-row items-end md:items-center gap-4 md:gap-12">
         <button 
           onClick={() => openNavbar()}
@@ -64,7 +72,15 @@ export function Header() {
         </ul>
       </div>
       <div className="flex flex-row items-center gap-4 md:pb-8">
-        <Image src={IconCart} alt="Cart icon" loading="eager" className="w-[22] h-[20] cursor-pointer" />
+        <div className="relative">
+          {cartQuantity > 0 && (
+            <div className="absolute -top-2 -right-2 bg-[hsl(var(--orange))] text-[hsl(var(--white))] w-5 h-4 rounded-lg flex items-center justify-center text-xs font-bold z-50">
+              {cartQuantity}
+            </div>
+          )}
+
+          <Image src={IconCart} alt="Cart icon" loading="eager" className="w-[22] h-[20] cursor-pointer" />
+        </div>
         <Image src={ImageAvatar} alt="Avatar" loading="eager" className="w-[25] h-[25] rounded-full hover:border hover:border-[hsl(var(--orange))] cursor-pointer" />
       </div>
     </header>

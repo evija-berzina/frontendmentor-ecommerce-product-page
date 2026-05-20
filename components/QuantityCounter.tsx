@@ -1,12 +1,16 @@
 "use client";
-import { useState } from "react";
 import Image from "next/image";
 import IconMinus from "../public/icon-minus.svg";
 import IconPlus from "../public/icon-plus.svg";
 
+type AddToCartProps = {
+  quantity: number;
+  setQuantity: React.Dispatch<React.SetStateAction<number>>;
+  addToCart: () => void;
+  cartQuantity: number;
+};
 
-export function QuantityCounter() {
-  const [quantity, setQuantity] = useState(0);
+export function QuantityCounter({quantity, setQuantity}: AddToCartProps) {
 
   return (
     <div className="flex items-center justify-between bg-[hsl(var(--light-grayish-blue))] px-4 py-4 rounded-lg">
