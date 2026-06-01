@@ -29,14 +29,16 @@ export function ProductImageCarousel() {
   }
 
   return (
-    <div className="w-screen -ml-8 mb-8 relative">
+    <div className="w-screen -ml-8 mb-8 relative md:w-full md:ml-0 md:flex md:flex-col md:max-w-[460px]">
       <button 
         onClick={() => handleCarouselNavigation("previous")}
         className="flex justify-center items-center bg-[hsl(var(--white))] w-12 h-12 rounded-full absolute top-1/2 -translate-y-1/2 left-4 z-10 cursor-pointer md:hidden">
         <Image className="w-3 h-4.5" src={IconPrevious} alt="Previous image" />
       </button>
-      <Image src={images[selectedImageIndex].src} alt={`Product image ${selectedImageIndex + 1}`} className="h-100 object-none" />
-      <div className="hidden md:flex md:flex-row md:justify-start md:items-center md:gap-6 mt-4">
+      <div className="md:rounded-xl md:overflow-hidden md:h-auto">
+        <Image src={images[selectedImageIndex].src} alt={`Product image ${selectedImageIndex + 1}`}  />
+      </div>
+      <div className="hidden md:flex md:flex-row md:justify-between md:items-center md:gap-6 mt-4">
         <button
           className={`rounded-lg cursor-pointer ${selectedImageIndex === 0 ? "ring-2 ring-[hsl(var(--orange))] relative overflow-hidden" : ""}`}
           onClick={() => setSelectedImageIndex(0)}

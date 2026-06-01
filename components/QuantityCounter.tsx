@@ -13,7 +13,7 @@ type AddToCartProps = {
 export function QuantityCounter({quantity, setQuantity}: AddToCartProps) {
 
   return (
-    <div className="flex items-center justify-between bg-[hsl(var(--light-grayish-blue))] px-4 py-4 rounded-lg">
+    <div className="flex items-center justify-between bg-[hsl(var(--light-grayish-blue))] px-4 py-4 rounded-lg md:flex-1">
       <button className="cursor-pointer" onClick={() => setQuantity( prev => Math.max(0, prev-1))}>
         <Image src={IconMinus} alt="Minus icon" width={12} height={4} />
       </button>
