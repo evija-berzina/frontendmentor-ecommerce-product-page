@@ -39,8 +39,8 @@ export function Header({cartQuantity}: AddToCartProps) {
                 className="mb-18">
                 <Image src={IconClose} alt="Close icon" loading="eager" className="w-[16] h-[15] cursor-pointer" />
               </button>
-              <ul className="font-bold">
-                <li className="mb-6"><a href="#" className="text-[hsl(var(--black))] hover:text-[hsl(var(--dark-grayish-blue))] transition-colors duration-200">Collections</a></li>
+              <ul className="font-bold ">
+                <li className="mb-6"><a href="#" className="text-[hsl(var(--black))] hover:text-[hsl(var(--dark-grayish-blue))] transition-colors duration-200 ">Collections</a></li>
                 <li className="mb-6"><a href="#" className="text-[hsl(var(--black))] hover:text-[hsl(var(--dark-grayish-blue))] transition-colors duration-200">Men</a></li>
                 <li className="mb-6"><a href="#" className="text-[hsl(var(--black))] hover:text-[hsl(var(--dark-grayish-blue))] transition-colors duration-200">Women</a></li>
                 <li className="mb-6"><a href="#" className="text-[hsl(var(--black))] hover:text-[hsl(var(--dark-grayish-blue))] transition-colors duration-200">About</a></li>
@@ -64,11 +64,21 @@ export function Header({cartQuantity}: AddToCartProps) {
         
         
         <ul className="hidden md:flex md:flex-row md:gap-6 md:justify-center md:items-center md:font-normal ">
-          <li className="md:pb-8 md:border-b-3 md:border-transparent hover:border-b-[hsl(var(--orange))] transition-border duration-200"><a href="#" className="text-[hsl(var(--black))] md:text-[hsl(var(--dark-grayish-blue))] hover:text-[hsl(var(--black))] transition-colors duration-200">Collections</a></li>
-          <li className="md:pb-8 md:border-b-3 md:border-transparent hover:border-b-[hsl(var(--orange))] transition-border duration-200"><a href="#" className="text-[hsl(var(--black))] md:text-[hsl(var(--dark-grayish-blue))] hover:text-[hsl(var(--black))] transition-colors duration-200">Men</a></li>
-          <li className="md:pb-8 md:border-b-3 md:border-transparent hover:border-b-[hsl(var(--orange))] transition-border duration-200"><a href="#" className="text-[hsl(var(--black))] md:text-[hsl(var(--dark-grayish-blue))] hover:text-[hsl(var(--black))] transition-colors duration-200">Women</a></li>
-          <li className="md:pb-8 md:border-b-3 md:border-transparent hover:border-b-[hsl(var(--orange))] transition-border duration-200"><a href="#" className="text-[hsl(var(--black))] md:text-[hsl(var(--dark-grayish-blue))] hover:text-[hsl(var(--black))] transition-colors duration-200">About</a></li>
-          <li className="md:pb-8 md:border-b-3 md:border-transparent hover:border-b-[hsl(var(--orange))] transition-border duration-200"><a href="#" className="text-[hsl(var(--black))] md:text-[hsl(var(--dark-grayish-blue))] hover:text-[hsl(var(--black))] transition-colors duration-200">Contact</a></li>
+          <li>
+            <a href="#collections" className="inline-block text-[hsl(var(--black))] md:text-[hsl(var(--dark-grayish-blue))] md:pb-8 md:border-b-3 md:border-transparent hover:text-[hsl(var(--black))] transition-colors hover:border-b-[hsl(var(--orange))] transition-border duration-200 cursor-pointer">Collections</a>
+          </li>
+          <li>
+            <a href="#men" className="inline-block text-[hsl(var(--black))] md:text-[hsl(var(--dark-grayish-blue))] md:pb-8 md:border-b-3 md:border-transparent hover:text-[hsl(var(--black))] transition-colors hover:border-b-[hsl(var(--orange))] transition-border duration-200 cursor-pointer">Men</a>
+          </li>
+          <li>
+            <a href="#women" className="inline-block text-[hsl(var(--black))] md:text-[hsl(var(--dark-grayish-blue))] md:pb-8 md:border-b-3 md:border-transparent hover:text-[hsl(var(--black))] transition-colors hover:border-b-[hsl(var(--orange))] transition-border duration-200 cursor-pointer">Women</a>
+          </li>
+          <li>
+            <a href="#about" className="inline-block text-[hsl(var(--black))] md:text-[hsl(var(--dark-grayish-blue))] md:pb-8 md:border-b-3 md:border-transparent hover:text-[hsl(var(--black))] transition-colors hover:border-b-[hsl(var(--orange))] transition-border duration-200 cursor-pointer">About</a>
+          </li>
+          <li>
+            <a href="#contact" className="inline-block text-[hsl(var(--black))] md:text-[hsl(var(--dark-grayish-blue))] md:pb-8 md:border-b-3 md:border-transparent hover:text-[hsl(var(--black))] transition-colors hover:border-b-[hsl(var(--orange))] transition-border duration-200 cursor-pointer">Contact</a>
+          </li>
         </ul>
       </div>
       <div className="flex flex-row items-center gap-4 md:pb-8">
