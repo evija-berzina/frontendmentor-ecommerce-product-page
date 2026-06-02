@@ -5,17 +5,14 @@ type AddToCartProps = {
   quantity: number;
   setQuantity: React.Dispatch<React.SetStateAction<number>>;
   addToCart: () => void;
-  cartQuantity: number;
 };
 
-export function AddToCart({quantity, setQuantity, addToCart, cartQuantity}: AddToCartProps) {
+export function AddToCart({quantity, setQuantity, addToCart}: AddToCartProps) {
   return (
     <div className="flex flex-col gap-4 md:flex-row">
       <QuantityCounter
         quantity={quantity} 
         setQuantity={setQuantity}
-        addToCart={addToCart}
-        cartQuantity={cartQuantity}
       />
       <AddToCartButton
         addToCart={addToCart}

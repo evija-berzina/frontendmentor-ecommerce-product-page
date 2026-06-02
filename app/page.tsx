@@ -28,7 +28,6 @@ export default function Home() {
             quantity={quantity} 
             setQuantity={setQuantity}
             addToCart={addToCart}
-            cartQuantity={cartQuantity}
           />
         </div>
       </main>
