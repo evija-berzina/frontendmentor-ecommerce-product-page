@@ -18,10 +18,8 @@ export function AddToCart({quantity, setQuantity, addToCart, cartQuantity}: AddT
         cartQuantity={cartQuantity}
       />
       <AddToCartButton
-        quantity={quantity} 
-        setQuantity={setQuantity}
         addToCart={addToCart}
-        cartQuantity={cartQuantity} />
+      />
     </div>
   )
 }
