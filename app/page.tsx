@@ -16,9 +16,6 @@ export default function Home() {
   return (
     <>
       <Header
-        quantity={quantity} 
-        setQuantity={setQuantity}
-        addToCart={addToCart}
         cartQuantity={cartQuantity}
       />
       <main className="md:grid md:grid-cols-2 md:gap-28 md:px-12 md:max-w-300 md:mx-auto">
