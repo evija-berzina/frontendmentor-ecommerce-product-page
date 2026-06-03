@@ -39,25 +39,18 @@ export function ProductImageCarousel() {
         <Image src={images[selectedImageIndex].src} alt={`Product image ${selectedImageIndex + 1}`}  />
       </div>
       <div className="hidden md:flex md:flex-row md:justify-between md:items-center md:gap-6 mt-4">
-        <button
-          className={`group relative rounded-lg cursor-pointer ${selectedImageIndex === 0 ? "ring-2 ring-[hsl(var(--orange))] relative overflow-hidden" : ""}`}
-          onClick={() => setSelectedImageIndex(0)}
-        >
-          <Image src={ProductImage1} alt="Thumbnail 1" className="w-16 h-16 object-cover rounded-lg"  />
-          <div className="absolute w-16 h-16 inset-0 bg-[hsl(var(--light-grayish-blue)/0.7)] z-100 opacity-0 group-hover:opacity-100 transition duration-200"></div>
-        </button>
-        <button className={`group relative transition-colors duration-200 rounded-lg cursor-pointer ${selectedImageIndex === 1 ? "ring-2 ring-[hsl(var(--orange))] relative overflow-hidden" : ""}`} onClick={() => setSelectedImageIndex(1)}>
-          <Image src={ProductImage2} alt="Thumbnail 2" className="w-16 h-16 object-cover rounded-lg" />
-          <div className="absolute w-16 h-16 inset-0 bg-[hsl(var(--light-grayish-blue)/0.7)] z-100 opacity-0 group-hover:opacity-100 transition duration-200"></div>
-        </button>
-        <button className={`group relative rounded-lg cursor-pointer ${selectedImageIndex === 2 ? "ring-2 ring-[hsl(var(--orange))] relative overflow-hidden" : ""}`} onClick={() => setSelectedImageIndex(2)}>
-          <Image src={ProductImage3} alt="Thumbnail 3" className="w-16 h-16 object-cover rounded-lg" />
-          <div className="absolute w-16 h-16 inset-0 bg-[hsl(var(--light-grayish-blue)/0.7)] z-100 opacity-0 group-hover:opacity-100 transition duration-200"></div>
-        </button>
-        <button className={`group relative rounded-lg cursor-pointer ${selectedImageIndex === 3 ? "ring-2 ring-[hsl(var(--orange))] relative overflow-hidden" : ""}`} onClick={() => setSelectedImageIndex(3)}>
-          <Image src={ProductImage4} alt="Thumbnail 4" className="w-16 h-16 object-cover rounded-lg" />
-          <div className="absolute w-16 h-16 inset-0 bg-[hsl(var(--light-grayish-blue)/0.7)] z-100 opacity-0 group-hover:opacity-100 transition duration-200"></div>
-        </button>
+        {images.map((image, index) => (
+          <button
+            key={image.id}
+            onClick={() => setSelectedImageIndex(index)}
+            className={`relative rounded-lg cursor-pointer inset-0 overflow-hidden ${selectedImageIndex === index ? "ring-2 ring-[hsl(var(--orange))]" : ""}`}
+          >
+          <Image
+            src={image.src}
+            alt={`Thumbnail ${index + 1}`}
+            className={`w-16 h-16 object-cover hover:brightness-70 transition duration-200 ${selectedImageIndex === index ? "brightness-70" : ""}`}  />
+          </button>
+        ))}
       </div>
       <button 
         onClick={() => handleCarouselNavigation("next")}
