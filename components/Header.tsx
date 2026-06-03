@@ -26,7 +26,7 @@ export function Header({cartQuantity}: AddToCartProps) {
   }
 
   return (
-    <header className="flex flex-row justify-between items-center h-26 mb-8 md:border-b md:border-b-[hsl(var(--grayish-blue))] ">
+    <header className="flex flex-row justify-between items-center h-26 mb-8 lg:border-b lg:border-b-[hsl(var(--grayish-blue))] ">
       {navbarOpen
         && (
           <>
@@ -49,10 +49,10 @@ export function Header({cartQuantity}: AddToCartProps) {
         )
       }
 
-      <div className="flex flex-row items-center justify-center h-full gap-4 md:gap-12">
+      <div className="flex flex-row items-center justify-center h-full gap-4 lg:gap-12">
         <button 
           onClick={() => openNavbar()}
-          className="cursor-pointer md:hidden"
+          className="cursor-pointer lg:hidden"
         >
           <Image src={IconMenu} alt="Menu icon" loading="eager" className="w-[16] h-[15]" />
         </button>
@@ -60,10 +60,10 @@ export function Header({cartQuantity}: AddToCartProps) {
           <Image src={Logo} alt="Logo" loading="eager" className="w-[138] h-[20]" />
         </div>
         
-        <ul className="hidden h-full md:flex md:flex-row md:gap-6 md:justify-center md:items-center md:font-normal">
+        <ul className="hidden h-full lg:flex lg:flex-row lg:gap-6 lg:justify-center lg:items-center lg:font-normal">
           {navLinks.map((link) => (
             <li className="h-full" key={link}>
-              <a href={`#${link.toLowerCase()}`} className="h-full flex items-center text-[hsl(var(--black))] md:text-[hsl(var(--dark-grayish-blue))] md:border-b-3 md:border-transparent hover:text-[hsl(var(--black))] hover:border-b-[hsl(var(--orange))] transition-all duration-200 cursor-pointer">{link}</a>
+              <a href={`#${link.toLowerCase()}`} className="h-full flex items-center text-[hsl(var(--black))] lg:text-[hsl(var(--dark-grayish-blue))] lg:border-b-3 lg:border-transparent hover:text-[hsl(var(--black))] hover:border-b-[hsl(var(--orange))] transition-all duration-200 cursor-pointer">{link}</a>
             </li>
           ))}
         </ul>
@@ -90,7 +90,7 @@ export function Header({cartQuantity}: AddToCartProps) {
               src={ImageAvatar}
               alt="Avatar"
               loading="eager"
-              className="w-6.25 h-6.25 md:w-12.5 md:h-12.5" />
+              className="w-6.25 h-6.25 lg:w-12.5 lg:h-12.5" />
         </button>
       </div>
     </header>

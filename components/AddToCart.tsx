@@ -9,7 +9,7 @@ type AddToCartProps = {
 
 export function AddToCart({quantity, setQuantity, addToCart}: AddToCartProps) {
   return (
-    <div className="flex flex-col gap-4 md:flex-row">
+    <div className="flex flex-col gap-4 lg:flex-row">
       <QuantityCounter
         quantity={quantity} 
         setQuantity={setQuantity}

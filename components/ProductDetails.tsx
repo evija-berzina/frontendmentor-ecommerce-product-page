@@ -8,12 +8,12 @@ export function ProductDetails() {
       <p>
         These low-profile sneakers are your perfect casual wear companion. Featuring a durable rubber outer sole, they’ll withstand everything the weather can offer.
       </p>
-      <div className="flex flex-row justify-between items-center py-8 font-bold md:flex-col md:items-start md:gap-4">
+      <div className="flex flex-row justify-between items-center py-8 font-bold lg:flex-col lg:items-start lg:gap-4">
         <div className="flex flex-row items-center justify-center gap-4">
           <span className="text-3xl font-bold text-[hsl(var(--black))]">$125.00</span>
           <span className="text-[hsl(var(--white))] bg-[hsl(var(--black))] px-2 py-0.5 rounded-md">50%</span>
         </div>
-        <span className="ml-4 text-gray-500 line-through md:ml-0">$250.00</span>
+        <span className="ml-4 text-gray-500 line-through lg:ml-0">$250.00</span>
       </div>
     </section>
   );

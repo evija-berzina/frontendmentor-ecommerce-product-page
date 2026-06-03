@@ -8,7 +8,7 @@ type AddToCartProps = {
 export function QuantityCounter({quantity, setQuantity}: AddToCartProps) {
 
   return (
-    <div className="flex items-center justify-between bg-[hsl(var(--light-grayish-blue))] px-4 py-4 rounded-lg md:flex-1">
+    <div className="flex items-center justify-between bg-[hsl(var(--light-grayish-blue))] px-4 py-4 rounded-lg lg:flex-1">
       <button type="button" className="text-[hsl(var(--orange))] hover:text-[hsl(var(--orange)/0.6)] transition-colors duration-200 cursor-pointer" onClick={() => setQuantity( prev => Math.max(0, prev-1))}>
         <svg width="12" height="4" fill="currentColor">
           <path d="M11.357 3.332A.641.641 0 0 0 12 2.69V.643A.641.641 0 0 0 11.357 0H.643A.641.641 0 0 0 0 .643v2.046c0 .357.287.643.643.643h10.714Z" id="a"/>

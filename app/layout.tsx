@@ -22,7 +22,7 @@ export default function RootLayout({
       lang="en"
       className={`${kumbhSans.variable} h-full antialiased`}
     >
-      <body className="px-8 md:px-[clamp(1rem,10vw,12rem)]">{children}</body>
+      <body className="px-8 lg:px-[clamp(1rem,10vw,12rem)]">{children}</body>
     </html>
   );
 }

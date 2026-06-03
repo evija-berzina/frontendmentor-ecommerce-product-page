@@ -29,16 +29,16 @@ export function ProductImageCarousel() {
   }
 
   return (
-    <div className="w-screen -ml-8 mb-8 relative md:w-full md:ml-0 md:flex md:flex-col md:max-w-115">
+    <div className="w-screen -ml-8 mb-8 relative lg:w-full lg:ml-0 lg:flex lg:flex-col lg:max-w-115">
       <button 
         onClick={() => handleCarouselNavigation("previous")}
-        className="flex justify-center items-center bg-[hsl(var(--white))] w-12 h-12 rounded-full absolute top-1/2 -translate-y-1/2 left-4 z-10 cursor-pointer md:hidden">
+        className="flex justify-center items-center bg-[hsl(var(--white))] w-12 h-12 rounded-full absolute top-1/2 -translate-y-1/2 left-4 z-10 cursor-pointer lg:hidden">
         <Image className="w-3 h-4.5" src={IconPrevious} alt="Previous image" />
       </button>
-      <div className="md:rounded-xl md:overflow-hidden md:h-auto">
+      <div className="lg:rounded-xl lg:overflow-hidden lg:h-auto">
         <Image src={images[selectedImageIndex].src} alt={`Product image ${selectedImageIndex + 1}`}  />
       </div>
-      <div className="hidden md:flex md:flex-row md:justify-between md:items-center md:gap-6 mt-4">
+      <div className="hidden lg:flex lg:flex-row lg:justify-between lg:items-center lg:gap-6 mt-4">
         {images.map((image, index) => (
           <button
             key={image.id}
@@ -54,7 +54,7 @@ export function ProductImageCarousel() {
       </div>
       <button 
         onClick={() => handleCarouselNavigation("next")}
-        className="flex justify-center items-center bg-[hsl(var(--white))] w-12 h-12 rounded-full absolute top-1/2 -translate-y-1/2 right-8 z-10 cursor-pointer md:hidden">
+        className="flex justify-center items-center bg-[hsl(var(--white))] w-12 h-12 rounded-full absolute top-1/2 -translate-y-1/2 right-8 z-10 cursor-pointer lg:hidden">
         <Image className="w-3 h-4.5" src={IconNext} alt="Next image" />
       </button>
     </div>

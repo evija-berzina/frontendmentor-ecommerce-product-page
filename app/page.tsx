@@ -18,11 +18,11 @@ export default function Home() {
       <Header
         cartQuantity={cartQuantity}
       />
-      <main className="md:grid md:grid-cols-2 md:gap-28 md:px-12 md:max-w-300 md:mx-auto">
+      <main className="lg:grid lg:grid-cols-2 lg:gap-28 lg:px-12 lg:max-w-300 lg:mx-auto">
         <div className="">
           <ProductImageCarousel />
         </div>
-        <div className="md:flex md:flex-col md:justify-center">
+        <div className="lg:flex lg:flex-col lg:justify-center">
           <ProductDetails />
           <AddToCart 
             quantity={quantity} 
