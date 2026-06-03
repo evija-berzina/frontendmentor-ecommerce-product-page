@@ -60,7 +60,7 @@ export function Header({cartQuantity}: AddToCartProps) {
           <Image src={Logo} alt="Logo" loading="eager" className="w-[138] h-[20]" />
         </div>
         
-        <ul className="hidden h-full lg:flex lg:flex-row lg:gap-6 lg:justify-center lg:items-center lg:font-normal">
+        <ul className="hidden h-full lg:flex lg:flex-row lg:gap-8 lg:justify-center lg:items-center lg:font-normal">
           {navLinks.map((link) => (
             <li className="h-full" key={link}>
               <a href={`#${link.toLowerCase()}`} className="h-full flex items-center text-[hsl(var(--black))] lg:text-[hsl(var(--dark-grayish-blue))] lg:border-b-3 lg:border-transparent hover:text-[hsl(var(--black))] hover:border-b-[hsl(var(--orange))] transition-all duration-200 cursor-pointer">{link}</a>

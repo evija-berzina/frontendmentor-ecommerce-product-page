@@ -43,12 +43,12 @@ export function ProductImageCarousel() {
           <button
             key={image.id}
             onClick={() => setSelectedImageIndex(index)}
-            className={`relative rounded-lg cursor-pointer inset-0 overflow-hidden ${selectedImageIndex === index ? "ring-2 ring-[hsl(var(--orange))]" : ""}`}
+            className={`relative w-16 h-16 md:w-20 md:h-20 lg:w-24 lg:h-24 rounded-lg cursor-pointer overflow-hidden ${selectedImageIndex === index ? "ring-2 ring-[hsl(var(--orange))]" : ""}`}
           >
           <Image
             src={image.src}
             alt={`Thumbnail ${index + 1}`}
-            className={`w-16 h-16 object-cover hover:brightness-70 transition duration-200 ${selectedImageIndex === index ? "brightness-70" : ""}`}  />
+            className={`w-full h-full object-cover hover:brightness-70 transition duration-200 ${selectedImageIndex === index ? "brightness-70" : ""}`}  />
           </button>
         ))}
       </div>

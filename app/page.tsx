@@ -18,7 +18,7 @@ export default function Home() {
       <Header
         cartQuantity={cartQuantity}
       />
-      <main className="lg:grid lg:grid-cols-2 lg:gap-28 lg:px-12 lg:max-w-300 lg:mx-auto">
+      <main className="lg:grid lg:grid-cols-[auto_1fr] lg:gap-28 lg:max-w-280 lg:mx-auto">
         <div className="">
           <ProductImageCarousel />
         </div>
