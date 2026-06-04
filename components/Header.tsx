@@ -5,9 +5,12 @@ import IconMenu from "../public/icon-menu.svg";
 import IconClose from "../public/icon-close.svg";
 import Logo from "../public/logo.svg";
 import ImageAvatar from "../public/image-avatar.png";
+import { Cart } from "./Cart";
 
 type AddToCartProps = {
   cartQuantity: number;
+  showCart: boolean;
+  setShowCart: React.Dispatch<React.SetStateAction<boolean>>;
 };
 
 const navLinks = [
@@ -18,15 +21,20 @@ const navLinks = [
   "Contact"
 ];
 
-export function Header({cartQuantity}: AddToCartProps) {
+export function Header({cartQuantity, showCart, setShowCart}: AddToCartProps) {
   const [navbarOpen, setNavbarOpen] = useState(false);
 
   function openNavbar() {
     setNavbarOpen(!navbarOpen);
   }
 
+  function showCartNow() {
+    setShowCart(prev => !prev);
+  }
+
   return (
-    <header className="flex flex-row justify-between items-center h-26 mb-8 lg:border-b lg:border-b-[hsl(var(--grayish-blue))] ">
+    <header className="flex flex-row justify-between items-center h-26 lg:mb-8 lg:border-b lg:border-b-[hsl(var(--grayish-blue))] ">
+      {showCart && <Cart />}
       {navbarOpen
         && (
           <>
@@ -76,6 +84,7 @@ export function Header({cartQuantity}: AddToCartProps) {
             </div>
           )}
           <button 
+            onClick={showCartNow}
             type="button"
             className="group cursor-pointer">
             <svg width="22" height="20">

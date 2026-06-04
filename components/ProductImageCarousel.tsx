@@ -36,7 +36,7 @@ export function ProductImageCarousel() {
         <Image className="w-3 h-4.5" src={IconPrevious} alt="Previous image" />
       </button>
       <div className="lg:rounded-xl lg:overflow-hidden lg:h-auto">
-        <Image src={images[selectedImageIndex].src} alt={`Product image ${selectedImageIndex + 1}`}  />
+          <Image src={images[selectedImageIndex].src} alt={`Product image ${selectedImageIndex + 1}`}  />
       </div>
       <div className="hidden lg:flex lg:flex-row lg:justify-between lg:items-center lg:gap-6 mt-4">
         {images.map((image, index) => (
