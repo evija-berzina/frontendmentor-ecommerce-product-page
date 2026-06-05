@@ -4,7 +4,6 @@ import {Header} from "../components/Header";
 import {ProductImageCarousel} from "../components/ProductImageCarousel";
 import {ProductDetails} from "../components/ProductDetails";
 import {AddToCart} from "../components/AddToCart";
-import { Cart } from "@/components/Cart";
 
 export default function Home() {
   const [quantity, setQuantity] = useState(0);
@@ -12,7 +11,7 @@ export default function Home() {
   const [showCart, setShowCart] = useState(false);
 
   function addToCart() {
-    setCartQuantity(quantity);
+    setCartQuantity(quantity + cartQuantity);
   }
 
   return (
