@@ -4,6 +4,7 @@ import IconDelete from "../public/icon-delete.svg";
 
 type AddToCartProps = {
   cartQuantity: number;
+  setCartQuantity: React.Dispatch<React.SetStateAction<number>>;
 };
 
 const product = {
@@ -12,7 +13,12 @@ const product = {
   picture: ProductImage,
 };
 
-export function Cart({cartQuantity}: AddToCartProps) {
+export function Cart({cartQuantity, setCartQuantity}: AddToCartProps) {
+
+  function deleteCartItem() {
+    setCartQuantity(0);
+  }
+
   return (
     <div className="flex flex-col items-stretch absolute top-30 left-4 right-4 h-90 rounded-xl bg-[hsl(var(--white))] z-1000 lg: lg:h-60 lg:w-80 lg:right-12 lg:left-auto lg:shadow-lg/20">
       <h1 className="text-[hsl(var(--black))] font-bold py-6 px-4 border-b border-[hsl(var(--grayish-blue))]">Cart</h1>
@@ -29,7 +35,9 @@ export function Cart({cartQuantity}: AddToCartProps) {
               <p>{product.name}</p>
               <p>${product.price.toFixed(2)}  x {cartQuantity} <span className="font-bold text-[hsl(var(--black))]">${(product.price * cartQuantity).toFixed(2)}</span></p>
             </div>
-            <Image src={IconDelete} alt="Product" loading="eager" className="w-4" />
+            <button onClick={deleteCartItem}>
+              <Image src={IconDelete} alt="Delete icon" loading="eager" className="w-4 cursor-pointer" />
+            </button>
           </div>
         )}
     </div>

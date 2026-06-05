@@ -18,6 +18,7 @@ export default function Home() {
     <div>
       <Header
         cartQuantity={cartQuantity}
+        setCartQuantity={setCartQuantity}
         showCart={showCart}
         setShowCart={setShowCart}
       />

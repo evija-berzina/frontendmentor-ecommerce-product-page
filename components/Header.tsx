@@ -9,6 +9,7 @@ import { Cart } from "./Cart";
 
 type AddToCartProps = {
   cartQuantity: number;
+  setCartQuantity: React.Dispatch<React.SetStateAction<number>>;
   showCart: boolean;
   setShowCart: React.Dispatch<React.SetStateAction<boolean>>;
 };
@@ -21,7 +22,7 @@ const navLinks = [
   "Contact"
 ];
 
-export function Header({cartQuantity, showCart, setShowCart}: AddToCartProps) {
+export function Header({cartQuantity, setCartQuantity, showCart, setShowCart}: AddToCartProps) {
   const [navbarOpen, setNavbarOpen] = useState(false);
 
   function openNavbar() {
@@ -34,7 +35,7 @@ export function Header({cartQuantity, showCart, setShowCart}: AddToCartProps) {
 
   return (
     <header className="flex flex-row justify-between items-center h-26 lg:mb-8 lg:border-b lg:border-b-[hsl(var(--grayish-blue))] ">
-      {showCart && <Cart cartQuantity={cartQuantity} />}
+      {showCart && <Cart cartQuantity={cartQuantity} setCartQuantity={setCartQuantity} />}
       {navbarOpen
         && (
           <>
