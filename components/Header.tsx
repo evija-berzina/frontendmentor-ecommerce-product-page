@@ -34,7 +34,7 @@ export function Header({cartQuantity, showCart, setShowCart}: AddToCartProps) {
 
   return (
     <header className="flex flex-row justify-between items-center h-26 lg:mb-8 lg:border-b lg:border-b-[hsl(var(--grayish-blue))] ">
-      {showCart && <Cart />}
+      {showCart && <Cart cartQuantity={cartQuantity} />}
       {navbarOpen
         && (
           <>
