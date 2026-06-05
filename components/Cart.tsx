@@ -6,6 +6,12 @@ type AddToCartProps = {
   cartQuantity: number;
 };
 
+const product = {
+  name: "Fall Limited Edition Sneakers",
+  price: 125.00,
+  picture: ProductImage,
+};
+
 export function Cart({cartQuantity}: AddToCartProps) {
   return (
     <div className="flex flex-col items-stretch absolute top-30 left-4 right-4 h-90 rounded-xl bg-[hsl(var(--white))] z-1000 lg: lg:h-60 lg:w-80 lg:right-12 lg:left-auto lg:shadow-lg/20">
@@ -16,13 +22,15 @@ export function Cart({cartQuantity}: AddToCartProps) {
         )
         : (
           <div className="flex flex-row justify-center items-center gap-4 h-full">
-          <Image src={ProductImage} alt="Empty cart" loading="eager" className="w-20 h-20 p-4" />
-          <div className="flex flex-col justify-center items-start gap-1">
-            <p>Fall Limited Edition Sneakers</p>
-            <p>$125.00 x 3 <span className="font-bold text-[hsl(var(--black))]">$375.00</span></p>
+            <div className="rounded-lg overflow-hidden">
+              <Image src={product.picture} alt="Empty cart" loading="eager" className="w-14 h-14" />
+            </div>
+            <div className="flex flex-col justify-center items-start gap-1">
+              <p>{product.name}</p>
+              <p>${product.price.toFixed(2)}  x {cartQuantity} <span className="font-bold text-[hsl(var(--black))]">${(product.price * cartQuantity).toFixed(2)}</span></p>
+            </div>
+            <Image src={IconDelete} alt="Product" loading="eager" className="w-4" />
           </div>
-          <Image src={IconDelete} alt="Product" loading="eager" className="w-12 p-4" />
-        </div>
         )}
     </div>
   );
