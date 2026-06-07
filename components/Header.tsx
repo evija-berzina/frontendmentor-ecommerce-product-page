@@ -39,8 +39,8 @@ export function Header({cartQuantity, setCartQuantity, showCart, setShowCart}: A
       {navbarOpen
         && (
           <>
-            <div className="inset-0 fixed bg-[hsl(var(--very-dark-blue)/0.7)] z-40"></div>
-            <nav className="absolute top-0 left-0 bottom-0 right-1/3 h-screen bg-[hsl(var(--white))] z-50 p-8 transform transition-transform duration-300 ease-out">
+            <div onClick={() => setNavbarOpen(false)} className="inset-0 fixed bg-[hsl(var(--very-dark-blue)/0.7)] z-40"></div>
+            <nav onClick={(e) => e.stopPropagation()} className="absolute top-0 left-0 bottom-0 right-1/3 h-screen bg-[hsl(var(--white))] z-50 p-8 transform transition-transform duration-300 ease-out">
               <button
                 onClick={() => openNavbar()}
                 className="mb-18">
