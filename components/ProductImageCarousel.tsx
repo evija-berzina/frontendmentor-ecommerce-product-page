@@ -72,34 +72,36 @@ export function ProductImageCarousel() {
     </div>
 
     {imageBoxOpened && (
-      <div className="fixed inset-0 bg-[hsl(var(--very-dark-blue)/0.7)] z-40 flex flex-col justify-center items-center py-14">
-        <div className="w-full max-w-125 flex justify-end mb-6">
-          <button 
-            onClick={() => setImageBoxOpened(false)}
-            className="relative right-0 text-[hsl(var(--white))] hover:text-[hsl(var(--orange))] transition-colors duration-200"
-          >
-            <svg width="14" height="15" className="fill-[hsl(var(--white))] hover:fill-[hsl(var(--orange))] transition-colors duration-200 cursor-pointer" xmlns="http://www.w3.org/2000/svg">
-              <path d="m11.596.782 2.122 2.122L9.12 7.499l4.597 4.597-2.122 2.122L7 9.62l-4.595 4.597-2.122-2.122L4.878 7.5.282 2.904 2.404.782l4.595 4.596L11.596.782Z" />
-            </svg>
-          </button>
-        </div>
-        <div
-          className="rounded-xl overflow-hidden h-auto w-full max-w-125">
-            <Image src={images[selectedOverlayImageIndex].src} alt={`Product image ${selectedOverlayImageIndex + 1}`}  />
-        </div>
-        <div className="flex flex-row justify-between items-center gap-6 mt-4">
-          {images.map((image, index) => (
-            <button
-              key={image.id}
-              onClick={() => setSelectedOverlayImageIndex(index)}
-              className={`relative w-24 h-24 rounded-lg cursor-pointer overflow-hidden ${selectedOverlayImageIndex === index ? "ring-2 ring-[hsl(var(--orange))]" : ""}`}
+      <div onClick={() => setImageBoxOpened(false)} className="fixed inset-0 bg-[hsl(var(--very-dark-blue)/0.7)] z-40 flex flex-col justify-center items-center py-14">
+        <div onClick={(e) => e.stopPropagation()} className="w-full max-w-125 px-4">
+          <div className="w-full max-w-125 flex justify-end mb-6">
+            <button 
+              onClick={() => setImageBoxOpened(false)}
+              className="relative right-0 text-[hsl(var(--white))] hover:text-[hsl(var(--orange))] transition-colors duration-200"
             >
-            <Image
-              src={image.src}
-              alt={`Thumbnail ${index + 1}`}
-              className={`w-full h-full object-cover hover:brightness-70 transition duration-200 ${selectedOverlayImageIndex === index ? "brightness-70" : ""}`}  />
+              <svg width="14" height="15" className="fill-[hsl(var(--white))] hover:fill-[hsl(var(--orange))] transition-colors duration-200 cursor-pointer" xmlns="http://www.w3.org/2000/svg">
+                <path d="m11.596.782 2.122 2.122L9.12 7.499l4.597 4.597-2.122 2.122L7 9.62l-4.595 4.597-2.122-2.122L4.878 7.5.282 2.904 2.404.782l4.595 4.596L11.596.782Z" />
+              </svg>
             </button>
-          ))}
+          </div>
+          <div
+            className="rounded-xl overflow-hidden h-auto w-full max-w-125">
+              <Image src={images[selectedOverlayImageIndex].src} alt={`Product image ${selectedOverlayImageIndex + 1}`}  />
+          </div>
+          <div className="flex flex-row justify-between items-center gap-6 mt-4">
+            {images.map((image, index) => (
+              <button
+                key={image.id}
+                onClick={() => setSelectedOverlayImageIndex(index)}
+                className={`relative w-24 h-24 rounded-lg cursor-pointer overflow-hidden ${selectedOverlayImageIndex === index ? "ring-2 ring-[hsl(var(--orange))]" : ""}`}
+              >
+              <Image
+                src={image.src}
+                alt={`Thumbnail ${index + 1}`}
+                className={`w-full h-full object-cover hover:brightness-70 transition duration-200 ${selectedOverlayImageIndex === index ? "brightness-70" : ""}`}  />
+              </button>
+            ))}
+          </div>
         </div>
       </div>
     )}
