@@ -73,7 +73,7 @@ export function ProductImageCarousel() {
 
     {imageBoxOpened && (
       <div onClick={() => setImageBoxOpened(false)} className="fixed inset-0 bg-[hsl(var(--very-dark-blue)/0.7)] z-40 flex flex-col justify-center items-center py-14">
-        <div onClick={(e) => e.stopPropagation()} className="w-full max-w-125 px-4">
+        <div onClick={(e) => e.stopPropagation()} className="h-screen w-full max-w-125 px-4">
           <div className="w-full max-w-125 flex justify-end mb-6">
             <button 
               onClick={() => setImageBoxOpened(false)}

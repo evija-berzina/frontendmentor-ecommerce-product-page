@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import {Header} from "../components/Header";
 import {ProductImageCarousel} from "../components/ProductImageCarousel";
 import {ProductDetails} from "../components/ProductDetails";
@@ -9,6 +9,17 @@ export default function Home() {
   const [quantity, setQuantity] = useState(0);
   const [cartQuantity, setCartQuantity] = useState(0);
   const [showCart, setShowCart] = useState(false);
+  const [products, setProducts] = useState([]);
+
+  useEffect(() => {
+    async function getProducts() {
+      const resp = await fetch("api/products");
+      const data = await resp.json();
+      setProducts(data);
+    }
+
+    getProducts();
+  }, [])
 
   function addToCart() {
     setCartQuantity(quantity + cartQuantity);
@@ -27,7 +38,9 @@ export default function Home() {
           <ProductImageCarousel />
         </div>
         <div className="lg:flex lg:flex-col lg:justify-center">
-          <ProductDetails />
+          <ProductDetails
+            products={products}
+          />
           <AddToCart 
             quantity={quantity} 
             setQuantity={setQuantity}
