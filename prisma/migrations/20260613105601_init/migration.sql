@@ -9,3 +9,14 @@ CREATE TABLE "Product" (
     "discount" INTEGER,
     "image" TEXT NOT NULL
 );
+
+-- CreateTable
+CREATE TABLE "Cart" (
+    "id" INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+    "productId" INTEGER NOT NULL,
+    "name" TEXT NOT NULL,
+    "price" REAL NOT NULL,
+    "quantity" INTEGER NOT NULL,
+    "total" REAL NOT NULL,
+    "image" TEXT NOT NULL
+);

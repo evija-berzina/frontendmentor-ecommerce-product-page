@@ -24,3 +24,18 @@ body {
   color: hsl(var(--dark-grayish-blue));
   font-family: var(--font-kumbh-sans), sans-serif;
 }
+
+.li-underline:hover {
+  animation-name: slide;
+  animation-duration: 0.5s;
+  animation-direction: reverse;
+}
+
+@keyframes slide {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(100px);
+  }
+}

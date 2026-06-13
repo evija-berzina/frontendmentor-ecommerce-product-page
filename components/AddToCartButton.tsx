@@ -1,12 +1,24 @@
-type AddToCartProps = {
-  addToCart: () => void;
+type Product = {
+  id: number;
+  brand: string;
+  name: string;
+  description: string;
+  price: number;
+  oldPrice?: number | null;
+  discount?: number | null;
+  image: string;
 };
 
-export function AddToCartButton({ addToCart }: AddToCartProps) {
+type AddToCartProps = {
+  addToCart: (productId: number) => void;
+  products: Product[];
+};
+
+export function AddToCartButton({ addToCart, products }: AddToCartProps) {
 
   return (
     <button 
-      onClick={addToCart}
+      onClick={() => addToCart(products[0].id)}
       className="flex flex-row items-center justify-center gap-4 bg-[hsl(var(--orange))] text-[hsl(var(--black))] font-bold p-4 rounded-lg cursor-pointer lg:flex-2 hover:bg-[hsl(var(--orange)/0.6)] transition-colors duration-200 text-nowrap"
     >
       <svg className="fill-[hsl(var(--black))]" width="22" height="20">

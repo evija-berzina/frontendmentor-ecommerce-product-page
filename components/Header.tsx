@@ -7,11 +7,23 @@ import Logo from "../public/logo.svg";
 import ImageAvatar from "../public/image-avatar.png";
 import { Cart } from "./Cart";
 
-type AddToCartProps = {
+type HeaderProps = {
   cartQuantity: number;
   setCartQuantity: React.Dispatch<React.SetStateAction<number>>;
   showCart: boolean;
   setShowCart: React.Dispatch<React.SetStateAction<boolean>>;
+  products: Product[];
+};
+
+type Product = {
+  id: number;
+  brand: string;
+  name: string;
+  description: string;
+  price: number;
+  oldPrice?: number | null;
+  discount?: number | null;
+  image: string;
 };
 
 const navLinks = [
@@ -22,7 +34,7 @@ const navLinks = [
   "Contact"
 ];
 
-export function Header({cartQuantity, setCartQuantity, showCart, setShowCart}: AddToCartProps) {
+export function Header({cartQuantity, setCartQuantity, showCart, setShowCart, products}: HeaderProps) {
   const [navbarOpen, setNavbarOpen] = useState(false);
 
   function openNavbar() {
@@ -35,7 +47,7 @@ export function Header({cartQuantity, setCartQuantity, showCart, setShowCart}: A
 
   return (
     <header className="flex flex-row justify-between items-center h-26 lg:mb-8 lg:border-b lg:border-b-[hsl(var(--grayish-blue))] ">
-      {showCart && <Cart cartQuantity={cartQuantity} setCartQuantity={setCartQuantity} />}
+      {showCart && <Cart cartQuantity={cartQuantity} setCartQuantity={setCartQuantity} products={products} />}
       {navbarOpen
         && (
           <>

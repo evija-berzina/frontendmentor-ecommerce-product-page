@@ -21,8 +21,20 @@ export default function Home() {
     getProducts();
   }, [])
 
-  function addToCart() {
+  function addToCart(productId: number) {
     setCartQuantity(quantity + cartQuantity);
+
+    fetch("/api/cart", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        productId,
+        quantity
+      })
+    });
+
   }
 
   return (
@@ -32,6 +44,7 @@ export default function Home() {
         setCartQuantity={setCartQuantity}
         showCart={showCart}
         setShowCart={setShowCart}
+        products={products}
       />
       <main className="lg:grid lg:grid-cols-[auto_1fr] lg:gap-28 lg:max-w-280 lg:mx-auto">
         <div className="">
@@ -45,6 +58,7 @@ export default function Home() {
             quantity={quantity} 
             setQuantity={setQuantity}
             addToCart={addToCart}
+            products={products}
           />
         </div>
       </main>
